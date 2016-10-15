@@ -3,6 +3,10 @@ Tools to splice working chromebook kernel content into the Fedora ARM images
 
 This is an initial attempt to automate a process that is frequently done by hand
 
+Much of this is drawn from the Fedora Chromebook wiki page here:
+
+https://fedoraproject.org/wiki/Architectures/ARM/Chromebook
+
 Your Chromebook must be in developer mode and have usb/sdcard boot enabled.
 
 These scripts are designed to produce an image that can be booted off of a USB
