@@ -1,6 +1,11 @@
 # fedora-chromebook-splice
 Tools to splice working chromebook kernel content into the Fedora ARM images
 
+NOTE: This is primarily of interest for those using ARM based Chromebooks.
+
+Intel Chromebooks provide a "legacy" BIOS option that makes installing
+arbitrary operating systems much easier.
+
 This is an initial attempt to automate a process that is frequently done by hand
 
 Much of this is drawn from the Fedora Chromebook wiki page here:
@@ -55,6 +60,10 @@ Arch Linux chromebook images.  I happened to discover Kali first.
 Fedora has a higher mountain to climb here, as we want to maintain
 a single official image for all supported hardware, with after the fact
 modification for specific platforms.
+
+As a Fedora contributor, my ultimate goal is to get to a point where we can
+use the Fedora ARM kernel and images, either as-is or with much lighter modifications
+that those automated with these scripts. 
 
 This could do with some improvement but it does work, and gets a working Fedora
 userspace onto a developer mode chromebook quickly, given an sdcard or usb stick.
