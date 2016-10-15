@@ -9,12 +9,19 @@ These scripts are designed to produce an image that can be booted off of a USB
 drive or an sdcard.  
 
 A huge thanks to the Kali Linux folks for generating working images for these
-devices.  Fedora has a higher mountain to climb here, as we want to maintain
+devices.  Check them out:
+
+https://www.offensive-security.com/kali-linux-arm-images/
+
+It's likely these same scripts, lightly modified, will also work with the
+Arch Linux chromebook images.  I happened to discover Kali first.
+
+Fedora has a higher mountain to climb here, as we want to maintain
 a single official image for all supported hardware, with after the fact
 modification for specific platforms.
 
 This could do with some improvement but it does work, and gets a working Fedora
-userspace onto a developer mode chromebook quickly, given an sdcard or usb stick
+userspace onto a developer mode chromebook quickly, given an sdcard or usb stick.
 
 # Pre-req
 
