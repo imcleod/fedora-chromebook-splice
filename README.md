@@ -10,22 +10,7 @@ https://fedoraproject.org/wiki/Architectures/ARM/Chromebook
 Your Chromebook must be in developer mode and have usb/sdcard boot enabled.
 
 These scripts are designed to produce an image that can be booted off of a USB
-drive or an sdcard.  
-
-A huge thanks to the Kali Linux folks for generating working images for these
-devices.  Check them out:
-
-https://www.offensive-security.com/kali-linux-arm-images/
-
-It's likely these same scripts, lightly modified, will also work with the
-Arch Linux chromebook images.  I happened to discover Kali first.
-
-Fedora has a higher mountain to climb here, as we want to maintain
-a single official image for all supported hardware, with after the fact
-modification for specific platforms.
-
-This could do with some improvement but it does work, and gets a working Fedora
-userspace onto a developer mode chromebook quickly, given an sdcard or usb stick.
+drive or an sdcard, leaving the developer mode ChromeOS system intact.
 
 # Pre-req
 
@@ -49,3 +34,28 @@ Copy the resulting "chromebook-output.img" to your USB or sdcard media
 Insert in your Chromebook
 
 Hit "ctrl-U" at the developer mode startup screen.
+
+# Credits
+
+The splice-images script uses guestfish, which is part of libguestfs.
+This means we make no use of loopback mounts or kpartx.
+When set up properly, libguestfs can even be run as a non-root user.
+It's a fantasticly cool and useful project.  Read more:
+
+http://libguestfs.org/
+
+A huge thanks to the Kali Linux folks for generating working images for these
+devices.  Check them out:
+
+https://www.offensive-security.com/kali-linux-arm-images/
+
+It's likely these same scripts, lightly modified, will also work with the
+Arch Linux chromebook images.  I happened to discover Kali first.
+
+Fedora has a higher mountain to climb here, as we want to maintain
+a single official image for all supported hardware, with after the fact
+modification for specific platforms.
+
+This could do with some improvement but it does work, and gets a working Fedora
+userspace onto a developer mode chromebook quickly, given an sdcard or usb stick.
+
