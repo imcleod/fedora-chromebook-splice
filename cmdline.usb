@@ -1,0 +1,1 @@
+noinitrd console=tty1 quiet root=/dev/sda5 rootwait rw lsm.module_locking=0 net.ifnames=0 rootfstype=ext4 

@@ -1,0 +1,39 @@
+#!/usr/bin/guestfish -f
+# Uncomment only one of the sections below
+# ++++++++++++++++++++++++++++++
+# UNCOMMENT ME FOR SDCARD
+# ++++++++++++++++++++++++++++++
+!cp -f fstab.sdcard fstab
+!cp -f cmdline.sdcard cmdline
+# ++++++++++++++++++++++++++++++
+# UNCOMMENT ME FOR USB
+# ++++++++++++++++++++++++++++++
+#!cp -f fstab.usb fstab
+#!cp -f cmdline.usb cmdline
+# ++++++++++++++++++++++++++++++
+# END
+# ++++++++++++++++++++++++++++++
+add-ro ./input-fedora.img
+add-ro ./input-kernel.img
+!./make-empty-gpt.sh ./chromebook-output.img
+add ./chromebook-output.img
+run
+# bulk copy the Fedora root partition to the new image
+copy-device-to-device /dev/sda4 /dev/sdc5
+mkmountpoint /kali
+mkmountpoint /spliced
+mount /dev/sdb2 /kali
+mount /dev/sdc5 /spliced
+# Copy input modules to new image
+glob cp-a /kali/lib/modules/* /spliced/lib/modules/
+# Copy input kernel partition to file in image
+copy-device-to-file /dev/sdb1 /spliced/var/tmp/packed-kernel
+# And then to working directory
+copy-out /spliced/var/tmp/packed-kernel .
+# Repack it with the right command line using our local script
+!./repack_kernel.sh cmdline
+# Then copy it back in and copy it to the first kernel partition
+copy-in ./repacked-kernel /spliced/var/tmp
+copy-file-to-device /spliced/var/tmp/repacked-kernel /dev/sdc1
+# Copy in our simple root only fstab
+copy-in ./fstab /spliced/etc
