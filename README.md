@@ -40,6 +40,17 @@ Insert in your Chromebook
 
 Hit "ctrl-U" at the developer mode startup screen.
 
+# Known Working
+
+Device names drawn from the ChromeOS hardware list here:
+https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices
+
+15-Oct-2016 - Kali 2.1.2 + Fedora 25 Beta tested to work with:
+
+* Snow/Daisy/Samsung ARM Chromebook
+* nyan_big/Acer Chromebook
+* veyron_speedy/Asus C201 Chromebook
+
 # Credits
 
 The splice-images script uses guestfish, which is part of libguestfs.
