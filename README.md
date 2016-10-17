@@ -19,9 +19,9 @@ drive or an sdcard, leaving the developer mode ChromeOS system intact.
 
 # Pre-req
 
-Requires guestfish/libguestfs and gdisk
+Requires vboot-utils, guestfish/libguestfs and gdisk
 
-A "dnf install -y guestfish gdisk" should be sufficient on Fedora
+A "dnf install -y guestfish gdisk vboot-utils" should be sufficient on Fedora
 
 
 # HOWTO
